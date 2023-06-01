@@ -17,7 +17,6 @@ function BottomNavigator({ navigation }) {
         tabBarActiveTintColor: "#e91e63",
         headerShown: false,
       }}
-      barStyle={{ backgroundColor: "#694fad" }}
     >
       <Tab.Screen
         name="Home"

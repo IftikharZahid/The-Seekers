@@ -1,36 +1,46 @@
-import { createStackNavigator } from "@react-navigation/stack";
+import React, { useEffect, useState } from "react";
+import { View, Image, StyleSheet, Text } from "react-native";
+import { STNavigator } from "./scr/navigation/STNavigator";
 import { NavigationContainer } from "@react-navigation/native";
-import React from "react";
-import { OnBoardScreen } from "./scr/screens/OnBoardScreen";
-import { BottomNavigator } from "./scr/navigation/BottomNavigator";
-import { HomeScreen } from "./scr/screens/HomeScreen";
-
-const Stack = createStackNavigator();
 
 const App = ({ navigation }) => {
+  const [splashVisible, setSplashVisible] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setSplashVisible(false);
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="OnBoardScreen"
-          component={OnBoardScreen}
-          options={{ headerShown: false }}
+    <View style={styles.container}>
+      {splashVisible ? (
+        <Image
+          source={require("./assets/splash.jpg")}
+          style={styles.splashImage}
+          resizeMode="contain"
         />
-
-        <Stack.Screen
-          name="BottomNavigator"
-          component={BottomNavigator}
-          options={{ headerShown: false }}
-        />
-
-        <Stack.Screen
-          name="HomeScreen"
-          component={HomeScreen}
-          options={{ headerShown: false }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+      ) : (
+        <View style={{ flex: 1, height: 650, width: 350 }}>
+          <STNavigator />
+        </View>
+      )}
+    </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  splashImage: {
+    width: "100%",
+    height: "100%",
+  },
+});
 
 export default App;

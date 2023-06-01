@@ -6,7 +6,12 @@ import { Button } from "../components/button";
 
 const OnBoardScreen = ({ navigation }) => {
   return (
-    <SafeAreaView style={{ backgroundColor: "white", flex: 1 }}>
+    <SafeAreaView
+      style={{
+        backgroundColor: "white",
+        flex: 1,
+      }}
+    >
       <View>
         <View style={{ marginTop: 40 }}>
           <Image
