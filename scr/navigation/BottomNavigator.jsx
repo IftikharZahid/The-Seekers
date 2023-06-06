@@ -5,7 +5,7 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import { CartScreen } from "../screens/CartScreen";
 import { HomeScreen } from "../screens/HomeScreen";
 import { Favorite } from "../screens/Favorite";
-import { Items } from "../screens/Items";
+import { Profile } from "../screens/Profile";
 
 const Tab = createBottomTabNavigator();
 
@@ -50,8 +50,8 @@ function BottomNavigator({ navigation }) {
         }}
       />
       <Tab.Screen
-        name="Items"
-        component={Items}
+        name="Profile"
+        component={Profile}
         options={{
           tabBarLabel: "Profile",
           tabBarIcon: ({ color, size }) => (

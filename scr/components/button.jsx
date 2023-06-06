@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     ...base,
     margin: 10,
     height: 45,
-    width: 120,
+    width: 200,
     justifyContent: "center",
   },
   btnText: {

@@ -5,6 +5,7 @@ const colors = {
   white: "white",
   black: "black",
   topban: "#F16B00",
+  gray: "gray",
 };
 const typography = {
   slicedThrough: {

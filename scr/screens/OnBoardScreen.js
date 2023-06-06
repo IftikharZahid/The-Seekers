@@ -1,8 +1,9 @@
 import * as React from "react";
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Card } from "react-native-paper";
 import { Button } from "../components/button";
+import { colors } from "../components/theme/designSystem";
 
 const OnBoardScreen = ({ navigation }) => {
   return (
@@ -17,7 +18,7 @@ const OnBoardScreen = ({ navigation }) => {
           <Image
             source={require("../../assets/seeks.png")}
             style={{
-              height: 250,
+              height: 200,
               width: "100%",
               resizeMode: "contain",
               alignSelf: "center",
@@ -55,14 +56,43 @@ const OnBoardScreen = ({ navigation }) => {
             <Text
               style={{
                 fontWeight: "bold",
-                alignSelf: "center",
+                marginLeft: 10,
               }}
             >
-              Do you want your son/daughter to give full attention to education?
-              Fulfill your dreams? Surely your answer will be yes. So why late?
-              Enroll in "Seeks Academy" today and ensure your success.
+              ✍ Do you want your son/daughter to give full attention to
+              education and Fulfill your dreams now?
+            </Text>
+            <Text
+              style={{
+                fontWeight: "bold",
+                marginLeft: 10,
+              }}
+            >
+              👉 Surely your answer will be yes.
+            </Text>
+
+            <Text
+              style={{
+                fontWeight: "bold",
+                marginLeft: 10,
+              }}
+            >
+              🕔 So why late?
+            </Text>
+            <Text
+              style={{
+                fontWeight: "bold",
+                marginLeft: 10,
+              }}
+            >
+              ✌ Enroll in Seeks Academy today and ensure your success ✌
             </Text>
           </Card>
+        </View>
+        <View style={style.Container}>
+          <View style={style.filled}></View>
+          <View style={style.unfilled}></View>
+          <View style={style.unfilled}></View>
         </View>
         <View
           style={{
@@ -78,5 +108,38 @@ const OnBoardScreen = ({ navigation }) => {
     </SafeAreaView>
   );
 };
+const style = StyleSheet.create({
+  Container: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItem: "center",
+    margin: 20,
+  },
 
+  filled: {
+    backgroundColor: colors.topban,
+    height: 10,
+    width: 25,
+    borderRadius: 20,
+    alignSelf: "center",
+    marginHorizontal: 3,
+  },
+
+  unfilled: {
+    backgroundColor: colors.gray,
+    height: 10,
+    width: 10,
+    borderRadius: 5,
+    alignSelf: "center",
+    opacity: 0.7,
+    marginHorizontal: 3,
+  },
+  customText: {
+    fontFamily: "FontleroyBrownNF",
+    alignSelf: "center",
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+});
 export { OnBoardScreen };

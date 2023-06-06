@@ -18,7 +18,7 @@ const App = ({ navigation }) => {
     <View style={styles.container}>
       {splashVisible ? (
         <Image
-          source={require("./assets/splash.jpg")}
+          source={require("./assets/seeks.png")}
           style={styles.splashImage}
           resizeMode="contain"
         />
@@ -38,8 +38,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   splashImage: {
-    width: "100%",
-    height: "100%",
+    width: "60%",
+    height: "60%",
   },
 });
 
