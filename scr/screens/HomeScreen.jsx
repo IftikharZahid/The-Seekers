@@ -1,16 +1,86 @@
-import * as React from "react";
+import React from "react";
 import {
   View,
   Text,
   StyleSheet,
   Image,
   SafeAreaView,
-  TextInput,
+  TouchableOpacity,
+  FlateList,
 } from "react-native";
+import { ScrollView, TextInput } from "react-native-gesture-handler";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import { colors } from "../components/theme/designSystem";
+import style from "../components/homestyle";
 
-const HomeScreen = ({ navigation }) => {
+import items from "../components/items";
+import foods from "../components/foods";
+
+const HomeScreen = () => {
+  const [selectedCategoryIndex, setSelectedCategoryIndex] = React.useState(0);
+
+  const LisCategories = () => {
+    return (
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={style.categoryListContainer}
+      >
+        {items.map((category, index) => (
+          <TouchableOpacity
+            key={index}
+            activeOpacity={0.8}
+            onPress={() => setSelectedCategoryIndex(index)}
+          >
+            <View
+              style={{
+                backgroundColor:
+                  selectedCategoryIndex == index
+                    ? colors.primary
+                    : colors.secondary,
+                ...style.categoryBtn,
+              }}
+            >
+              <View style={style.categoryBtnImgCon}>
+                <Image
+                  source={category.image}
+                  style={{ height: 35, width: 35, resizeMode: "cover" }}
+                />
+              </View>
+              <Text
+                style={{
+                  fontSize: 15,
+                  fontWeight: "bold",
+                  marginLeft: 10,
+                  color:
+                    selectedCategoryIndex == index
+                      ? colors.white
+                      : colors.primary,
+                }}
+              >
+                {category.name}
+              </Text>
+            </View>
+          </TouchableOpacity>
+        ))}
+      </ScrollView>
+    );
+  };
+
+  const Card = (food) => {
+    return (
+      <View style={style.card}>
+        <View style={{ alignItems: "center", top: -40 }}></View>
+        <View style={{ marginHorizontal: 20 }}>
+          <Text style={{ fontSize: 18, fontWeight: "bold" }}>{food.name}</Text>
+          <Text style={{ fontSize: 14, color: colors.grey, marginTop: 2 }}>
+            {}
+          </Text>
+        </View>
+      </View>
+    );
+  };
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={style.header}>
@@ -30,7 +100,7 @@ const HomeScreen = ({ navigation }) => {
             <Text
               style={{
                 color: "gray",
-                fontSize: 18,
+                fontSize: 15,
               }}
             >
               What do you want today?
@@ -42,9 +112,8 @@ const HomeScreen = ({ navigation }) => {
           style={{ height: 50, width: 50, borderRadius: 25 }}
         />
       </View>
-
       <View
-        style={{ marginTop: 30, flexDirection: "row", paddingHorizontal: 20 }}
+        style={{ marginTop: 20, flexDirection: "row", paddingHorizontal: 10 }}
       >
         <View style={style.inputcontainer}>
           <Icon name="search" size={28} />
@@ -58,34 +127,10 @@ const HomeScreen = ({ navigation }) => {
           <Icon name="tune" size={28} color="white" />
         </View>
       </View>
+      <View>
+        <LisCategories />
+      </View>
     </SafeAreaView>
   );
 };
-
-const style = StyleSheet.create({
-  header: {
-    marginTop: 40,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    paddingHorizontal: 20,
-  },
-  inputcontainer: {
-    flex: 1,
-    height: 50,
-    borderRadius: 5,
-    flexDirection: "row",
-    backgroundColor: "gray",
-    alignItems: "center",
-    paddingHorizontal: 5,
-  },
-  sortBtn: {
-    width: 50,
-    height: 50,
-    marginLeft: 5,
-    backgroundColor: colors.topban,
-    borderRadius: 10,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});
 export { HomeScreen };

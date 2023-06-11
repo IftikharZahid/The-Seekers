@@ -35,7 +35,7 @@ function Button({ primary, outline, title, onPress }) {
 }
 
 const base = {
-  backgroundColor: colors.topban,
+  backgroundColor: colors.primary,
   borderRadius: 50,
   borderWidth: 1,
   padding: 10,

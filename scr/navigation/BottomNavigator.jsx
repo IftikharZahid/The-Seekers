@@ -1,11 +1,17 @@
 import * as React from "react";
+import { View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import { MaterialIcons } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
 
 import { CartScreen } from "../screens/CartScreen";
 import { HomeScreen } from "../screens/HomeScreen";
 import { Favorite } from "../screens/Favorite";
 import { Profile } from "../screens/Profile";
+import { SearchScreen } from "../screens/SearchScreen";
+import { colors } from "../components/theme/designSystem";
 
 const Tab = createBottomTabNavigator();
 
@@ -23,8 +29,9 @@ function BottomNavigator({ navigation }) {
         component={HomeScreen}
         options={{
           tabBarLabel: "Home",
+          tabBarLabel: () => null,
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="home" color={color} size={size} />
+            <AntDesign name="home" size={25} color="black" />
           ),
         }}
       />
@@ -33,8 +40,35 @@ function BottomNavigator({ navigation }) {
         component={Favorite}
         options={{
           tabBarLabel: "Favorite",
+          tabBarLabel: () => null,
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="heart" color={color} size={size} />
+            <MaterialIcons name="favorite-border" size={25} color="black" />
+          ),
+        }}
+      />
+
+      <Tab.Screen
+        name="SearchScreen"
+        component={SearchScreen}
+        options={{
+          tabBarLabel: "SearchScreen",
+          tabBarLabel: () => null,
+          tabBarIcon: ({ color, size }) => (
+            <View
+              style={{
+                height: 50,
+                width: 50,
+                justifyContent: "center",
+                alignItems: "center",
+                marginBottom: 20,
+                backgroundColor: "white",
+                borderColor: colors.primary,
+                borderWidth: 2,
+                borderRadius: 25,
+              }}
+            >
+              <AntDesign name="search1" size={25} color="black" />
+            </View>
           ),
         }}
       />
@@ -43,8 +77,10 @@ function BottomNavigator({ navigation }) {
         component={CartScreen}
         options={{
           tabBarLabel: "Updates",
+          tabBarLabel: () => null,
+
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="bell" color={color} size={size} />
+            <FontAwesome name="bell-o" size={25} color="black" />
           ),
           tabBarBadge: 3,
         }}
@@ -54,8 +90,10 @@ function BottomNavigator({ navigation }) {
         component={Profile}
         options={{
           tabBarLabel: "Profile",
+          tabBarLabel: () => null,
+
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="account" color={color} size={size} />
+            <AntDesign name="user" size={25} color="black" />
           ),
         }}
       />

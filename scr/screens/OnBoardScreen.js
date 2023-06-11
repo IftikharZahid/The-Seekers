@@ -118,7 +118,7 @@ const style = StyleSheet.create({
   },
 
   filled: {
-    backgroundColor: colors.topban,
+    backgroundColor: colors.primary,
     height: 10,
     width: 25,
     borderRadius: 20,
@@ -127,7 +127,7 @@ const style = StyleSheet.create({
   },
 
   unfilled: {
-    backgroundColor: colors.gray,
+    backgroundColor: colors.grey,
     height: 10,
     width: 10,
     borderRadius: 5,

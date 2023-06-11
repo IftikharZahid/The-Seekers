@@ -1,11 +1,10 @@
 const colors = {
-  primary: "#DB3022",
-  secondary: "#EFC849",
-  accent: "#2AA952",
-  white: "white",
-  black: "black",
-  topban: "#F16B00",
-  gray: "gray",
+  white: "#ffff",
+  dark: "#000",
+  primary: "#f9813A",
+  secondary: "#fedac5",
+  light: "#E5E5E5",
+  grey: "#908E8C",
 };
 const typography = {
   slicedThrough: {
