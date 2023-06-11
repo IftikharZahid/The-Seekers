@@ -2,21 +2,23 @@ import React from "react";
 import {
   View,
   Text,
-  StyleSheet,
   Image,
   SafeAreaView,
   TouchableOpacity,
-  FlateList,
 } from "react-native";
-import { ScrollView, TextInput } from "react-native-gesture-handler";
+import {
+  ScrollView,
+  TextInput,
+  FlatList,
+  TouchableHighlight,
+} from "react-native-gesture-handler";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import { colors } from "../components/theme/designSystem";
 import style from "../components/homestyle";
-
 import items from "../components/items";
 import foods from "../components/foods";
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
   const [selectedCategoryIndex, setSelectedCategoryIndex] = React.useState(0);
 
   const LisCategories = () => {
@@ -67,17 +69,46 @@ const HomeScreen = () => {
     );
   };
 
-  const Card = (food) => {
+  const Card = ({ food }) => {
     return (
-      <View style={style.card}>
-        <View style={{ alignItems: "center", top: -40 }}></View>
-        <View style={{ marginHorizontal: 20 }}>
-          <Text style={{ fontSize: 18, fontWeight: "bold" }}>{food.name}</Text>
-          <Text style={{ fontSize: 14, color: colors.grey, marginTop: 2 }}>
-            {}
-          </Text>
+      <TouchableHighlight
+        underlayColor={colors.white}
+        activeOpacity={0.8}
+        onPress={() => navigation.navigate("DetailedScreen", food)}
+      >
+        <View style={style.card}>
+          <View style={{ alignItems: "center", top: -35 }}>
+            <Image
+              source={food.image}
+              style={{ height: 100, width: 100, borderRadius: 50 }}
+            />
+          </View>
+
+          <View style={{ marginHorizontal: 20 }}>
+            <Text style={{ fontSize: 18, fontWeight: "bold" }}>
+              {food.name}
+            </Text>
+            <Text style={{ fontSize: 14, color: colors.grey, marginTop: 2 }}>
+              {food.ingredients}
+            </Text>
+          </View>
+          <View
+            style={{
+              marginTop: 5,
+              marginHorizontal: 10,
+              flexDirection: "row",
+              justifyContent: "space-around",
+            }}
+          >
+            <Text style={{ fontSize: 18, fontWeight: "bold" }}>
+              ${food.price}
+            </Text>
+            <View style={style.addToCardBtn}>
+              <Icon name="add" size={25} color={colors.white} />
+            </View>
+          </View>
         </View>
-      </View>
+      </TouchableHighlight>
     );
   };
 
@@ -129,6 +160,15 @@ const HomeScreen = () => {
       </View>
       <View>
         <LisCategories />
+      </View>
+
+      <View>
+        <FlatList
+          showsVerticalScrollIndicator={false}
+          numColumns={2}
+          data={foods}
+          renderItem={({ item }) => <Card food={item} />}
+        />
       </View>
     </SafeAreaView>
   );

@@ -4,6 +4,7 @@ import React from "react";
 import { OnBoardScreen } from "../screens/OnBoardScreen";
 import { BottomNavigator } from "./BottomNavigator";
 import { HomeScreen } from "../screens/HomeScreen";
+import { DetailedScreen } from "../screens/DetailedScreen";
 
 const Stack = createStackNavigator();
 
@@ -28,6 +29,8 @@ const STNavigator = ({ navigation }) => {
           component={HomeScreen}
           options={{ headerShown: false }}
         />
+
+        <Stack.Screen name="DetailedScreen" component={DetailedScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

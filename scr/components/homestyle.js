@@ -49,14 +49,22 @@ const style = {
     alignItems: "center",
   },
   card: {
-    height: 210,
-    width: 120,
+    height: 190,
+    width: 155,
     marginHorizontal: 10,
     marginBottom: 20,
-    marginTop: 50,
+    marginTop: 35,
     borderRadius: 15,
     elevation: 13,
     backgroundColor: colors.white,
+  },
+  addToCardBtn: {
+    height: 30,
+    width: 30,
+    borderRadius: 20,
+    backgroundColor: colors.primary,
+    justifyContent: "center",
+    alignItems: "center",
   },
 };
 export default style;
