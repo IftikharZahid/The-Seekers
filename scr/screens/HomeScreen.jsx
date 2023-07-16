@@ -165,6 +165,7 @@ const HomeScreen = ({ navigation }) => {
       <View>
         <FlatList
           showsVerticalScrollIndicator={false}
+          scrollEnabled={true}
           numColumns={2}
           data={foods}
           renderItem={({ item }) => <Card food={item} />}

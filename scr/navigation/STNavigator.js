@@ -30,7 +30,11 @@ const STNavigator = ({ navigation }) => {
           options={{ headerShown: false }}
         />
 
-        <Stack.Screen name="DetailedScreen" component={DetailedScreen} />
+        <Stack.Screen
+          name="DetailedScreen"
+          component={DetailedScreen}
+          options={{ headerShown: false }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

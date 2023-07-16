@@ -27,5 +27,20 @@ const foods = [
     price: "5.30",
     image: require("../../assets/foodpics/4.jpg"),
   },
+  {
+    id: "5",
+    name: "Meat Pizza",
+    ingredients: "Mixed Pizza",
+    price: "8.30",
+    image: require("../../assets/foodpics/1.jpg"),
+  },
+
+  {
+    id: "6",
+    name: "Meat Pizza",
+    ingredients: "Mixed Pizza",
+    price: "8.30",
+    image: require("../../assets/foodpics/1.jpg"),
+  },
 ];
 export default foods;

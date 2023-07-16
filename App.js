@@ -9,7 +9,7 @@ const App = ({ navigation }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setSplashVisible(false);
-    }, 5000);
+    }, 0);
 
     return () => clearTimeout(timer);
   }, []);
