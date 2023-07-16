@@ -11,7 +11,7 @@ const Stack = createStackNavigator();
 const STNavigator = ({ navigation }) => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen
           name="OnBoardScreen"
           component={OnBoardScreen}

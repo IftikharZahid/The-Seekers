@@ -29,9 +29,9 @@ function BottomNavigator({ navigation }) {
         component={HomeScreen}
         options={{
           tabBarLabel: "Home",
-          tabBarLabel: () => null,
+          tabBarLabelStyle: { display: "none" },
           tabBarIcon: ({ color, size }) => (
-            <AntDesign name="home" size={25} color="black" />
+            <AntDesign name="home" size={25} color={color} />
           ),
         }}
       />
@@ -40,9 +40,9 @@ function BottomNavigator({ navigation }) {
         component={Favorite}
         options={{
           tabBarLabel: "Favorite",
-          tabBarLabel: () => null,
+          tabBarLabelStyle: { display: "none" },
           tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name="favorite-border" size={25} color="black" />
+            <MaterialIcons name="favorite-border" size={25} color={color} />
           ),
         }}
       />
@@ -52,7 +52,7 @@ function BottomNavigator({ navigation }) {
         component={SearchScreen}
         options={{
           tabBarLabel: "SearchScreen",
-          tabBarLabel: () => null,
+          tabBarLabelStyle: { display: "none" },
           tabBarIcon: ({ color, size }) => (
             <View
               style={{
@@ -67,7 +67,7 @@ function BottomNavigator({ navigation }) {
                 borderRadius: 25,
               }}
             >
-              <AntDesign name="search1" size={25} color="black" />
+              <AntDesign name="search1" size={25} color={color} />
             </View>
           ),
         }}
@@ -77,10 +77,9 @@ function BottomNavigator({ navigation }) {
         component={CartScreen}
         options={{
           tabBarLabel: "Updates",
-          tabBarLabel: () => null,
-
+          tabBarLabelStyle: { display: "none" },
           tabBarIcon: ({ color, size }) => (
-            <FontAwesome name="bell-o" size={25} color="black" />
+            <FontAwesome name="bell-o" size={25} color={color} />
           ),
           tabBarBadge: 3,
         }}
@@ -90,14 +89,14 @@ function BottomNavigator({ navigation }) {
         component={Profile}
         options={{
           tabBarLabel: "Profile",
-          tabBarLabel: () => null,
-
+          tabBarLabelStyle: { display: "none" },
           tabBarIcon: ({ color, size }) => (
-            <AntDesign name="user" size={25} color="black" />
+            <AntDesign name="user" size={25} color={color} />
           ),
         }}
       />
     </Tab.Navigator>
   );
 }
+
 export { BottomNavigator };
