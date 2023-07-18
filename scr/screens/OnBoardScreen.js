@@ -25,7 +25,7 @@ const OnBoardScreen = ({ navigation }) => {
             }}
           />
         </View>
-        <View style={{}}>
+        <View>
           <Text
             style={{
               fontSize: 23,

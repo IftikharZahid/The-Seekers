@@ -17,6 +17,7 @@ import { colors } from "../components/theme/designSystem";
 import style from "../components/homestyle";
 import items from "../components/items";
 import foods from "../components/foods";
+import { Profile } from "./Profile";
 
 const HomeScreen = ({ navigation }) => {
   const [selectedCategoryIndex, setSelectedCategoryIndex] = React.useState(0);
@@ -138,10 +139,13 @@ const HomeScreen = ({ navigation }) => {
             </Text>
           </View>
         </View>
-        <Image
-          source={require("../../assets/zk.jpg")}
-          style={{ height: 50, width: 50, borderRadius: 25 }}
-        />
+        <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
+          <Image
+            source={require("../../assets/zk.jpg")}
+            style={{ height: 50, width: 50, borderRadius: 25 }}
+            //onPress={navigation.navigate("Profile")}
+          />
+        </TouchableOpacity>
       </View>
       <View
         style={{ marginTop: 20, flexDirection: "row", paddingHorizontal: 10 }}

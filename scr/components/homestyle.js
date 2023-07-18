@@ -41,8 +41,8 @@ const style = {
   },
 
   categoryBtnImgCon: {
-    height: 35,
-    width: 35,
+    //height: 35,
+    //width: 35,
     backgroundColor: colors.white,
     borderRadius: 30,
     justifyContent: "center",

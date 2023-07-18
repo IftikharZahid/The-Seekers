@@ -29,7 +29,7 @@ function BottomNavigator({ navigation }) {
         component={HomeScreen}
         options={{
           tabBarLabel: "Home",
-          tabBarLabelStyle: { display: "none" },
+          // tabBarLabelStyle: { display: "none" },
           tabBarIcon: ({ color, size }) => (
             <AntDesign name="home" size={25} color={color} />
           ),
@@ -40,7 +40,7 @@ function BottomNavigator({ navigation }) {
         component={Favorite}
         options={{
           tabBarLabel: "Favorite",
-          tabBarLabelStyle: { display: "none" },
+          // tabBarLabelStyle: { display: "none" },
           tabBarIcon: ({ color, size }) => (
             <MaterialIcons name="favorite-border" size={25} color={color} />
           ),
@@ -77,7 +77,7 @@ function BottomNavigator({ navigation }) {
         component={CartScreen}
         options={{
           tabBarLabel: "Updates",
-          tabBarLabelStyle: { display: "none" },
+          // tabBarLabelStyle: { display: "none" },
           tabBarIcon: ({ color, size }) => (
             <FontAwesome name="bell-o" size={25} color={color} />
           ),
@@ -89,7 +89,7 @@ function BottomNavigator({ navigation }) {
         component={Profile}
         options={{
           tabBarLabel: "Profile",
-          tabBarLabelStyle: { display: "none" },
+          // tabBarLabelStyle: { display: "none" },
           tabBarIcon: ({ color, size }) => (
             <AntDesign name="user" size={25} color={color} />
           ),
