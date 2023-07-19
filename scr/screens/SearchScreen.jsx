@@ -25,7 +25,7 @@ const SearchScreen = ({ navigation }) => {
       setAdvice(data.slip.advice);
       setCount((x) => x + 1);
     } catch (error) {
-      console.error("Error fetching advice:", error);
+      console.error("Press Clear & TRY AGAIN", error);
     }
   }
 
